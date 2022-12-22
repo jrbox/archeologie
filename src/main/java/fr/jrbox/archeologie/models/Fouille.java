@@ -37,6 +37,7 @@ public class Fouille {
     /**
      * Liste des artefacts trouvés
      */
+    @NotNull
     private List<Artefact> artefacts;
 
 

@@ -3,9 +3,9 @@ package fr.jrbox.archeologie.models;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
 
 import java.util.UUID;
 
@@ -27,7 +27,7 @@ public class Parcelle {
      */
     @NotEmpty(message = "Le nom de la parcelle est obligatoire")
     @NotBlank(message = "Le nom de la parcelle est obligatoire")
-    @Length(max = 32, message = "Le nom de la parcelle est limité à 32 caractères")
+    @Size(max = 32, message = "Le nom de la parcelle est limité à 32 caractères")
     private String nom;
 
     /**

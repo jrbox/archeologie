@@ -2,9 +2,9 @@ package fr.jrbox.archeologie.models;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
 
 import java.util.UUID;
 
@@ -23,14 +23,14 @@ public class ArtefactCategorie {
     /**
      * Nom de la catégorie.
      */
-    @Length(max = 24)
+    @Size(max = 24, message = "Le nom de la catégorie ne doit pas dépasser 24 caractères")
     @NotEmpty(message = "le nom de la catégorie est obligatoire")
-    @NotBlank(message="le nom de la catégorie est obligatoire")
+    @NotBlank(message = "le nom de la catégorie est obligatoire")
     private String nom;
 
     /**
      * Description
      */
-    @Length(max = 64, message = "la description est limitée à 64 caractères")
+    @Size(max = 64, message = "la description est limitée à 64 caractères")
     private String description;
 }

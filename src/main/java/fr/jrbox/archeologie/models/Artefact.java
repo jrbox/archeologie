@@ -5,9 +5,9 @@ import fr.jrbox.archeologie.models.enums.ConservationType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.validator.constraints.Length;
 
 import java.util.List;
 import java.util.UUID;
@@ -31,11 +31,11 @@ public class Artefact {
      * - NonNull : La donnée ne peut pas être nulle
      * - Length : Nombre de caractères max autorisé
      * - NotEmpty : Nombre de caractères supérieur à 0
-     *
+     * - NoNull : identique à NotNull (permet de generer les constructeurs avec lombok)
      */
     @NotEmpty(message = "Designation obligatoire")
     @NotBlank(message = "Designation obligatoire")
-    @Length(max = 128)
+    @Size(max = 128, message = "La designation ne doit pas dépasser 128 caractères")
     private String designation;
 
     /**
