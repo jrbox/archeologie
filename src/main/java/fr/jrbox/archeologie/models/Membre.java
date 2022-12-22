@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import java.util.UUID;
@@ -29,6 +30,7 @@ public class Membre {
     @NotBlank(message = "Le nom est obligatoire")
     @NotEmpty(message = "Le nom est obligatoire")
     @Size(max = 32, message = "Le nom est limité à 32 caracteres")
+    @NonNull
     private String nom;
 
 }

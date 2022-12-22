@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NonNull;
 
 import java.util.UUID;
 
@@ -26,6 +27,7 @@ public class ArtefactCategorie {
     @Size(max = 24, message = "Le nom de la catégorie ne doit pas dépasser 24 caractères")
     @NotEmpty(message = "le nom de la catégorie est obligatoire")
     @NotBlank(message = "le nom de la catégorie est obligatoire")
+    @NonNull
     private String nom;
 
     /**

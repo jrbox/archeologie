@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -36,6 +37,7 @@ public class Artefact {
     @NotEmpty(message = "Designation obligatoire")
     @NotBlank(message = "Designation obligatoire")
     @Size(max = 128, message = "La designation ne doit pas dépasser 128 caractères")
+    @NonNull
     private String designation;
 
     /**
@@ -47,8 +49,10 @@ public class Artefact {
      * Etat de conservation de l'artefact
      */
     @NotNull(message = "Etat de conservation obligatoire")
+    @NonNull
     private ConservationType conservation;
 
     @NotNull(message = "Completude obligatoire")
+    @NonNull
     private CompletudeType completude;
 }

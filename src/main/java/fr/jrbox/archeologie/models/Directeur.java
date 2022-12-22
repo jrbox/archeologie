@@ -20,6 +20,7 @@ public class Directeur {
      * Membre associé au directeur
      */
     @NotNull(message = "Le membre est obligatoire")
+    @NonNull
     private Membre membre;
 
     /**
